@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Name Input Form</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh; /* Full screen height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            font-family: 'Arial', sans-serif;
+            background: url('https://img.freepik.com/free-vector/fingerprint-neon-background_23-2148364033.jpg?t=st=1740473664~exp=1740477264~hmac=6cb6c78db8fcf4ceafa0652fa742d979ee2cfe588836c4aa354f3174d8101bda&w=1800') no-repeat center center fixed; /* Correct background image URL */
+            background-size: cover;
+            animation: zoomEffect 30s infinite alternate; /* Zoom effect for background */
+        }
+
+        .form-container {
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent white */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            max-width: 500px; /* Max width for larger screens */
+            width: 100%; /* Full width for smaller screens */
+        }
+
+        h2 {
+            margin-bottom: 30px;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            color:white;
+        }
+
+        input[type="text"] {
+            width: 100%; /* Full width for inputs */
+            padding: 10px;
+            margin-bottom: 20px; /* Space between inputs */
+            border: 1px solid #ced4da; /* Border style */
+            border-radius: 5px; /* Rounded corners */
+            transition: border-color 0.3s; /* Smooth transition for focus */
+        }
+
+        input[type="text"]:focus {
+            border-color: #80bdff; /* Change border color on focus */
+            outline: none; /* Remove outline */
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Shadow on focus */
+        }
+
+        button {
+            margin-top: 15px;
+            width: 100%; 
+            padding: 10px;
+            background-color: #ca1bc7; 
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s; 
+        }
+
+        button:hover {
+            background-color: #b30083;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Register</h2>
+    <form action="/capture" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+    
+        <label for="id">User ID:</label>
+        <input type="text" id="id" name="id" required>
+         <br>
+        <button type="submit">Register</button>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

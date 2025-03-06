@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Fullscreen background with gradient */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background: linear-gradient(to right, #4facfe, #00f2fe); /* Gradient background */
+            overflow: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            padding: 0 20px;
+            z-index: 1;
+            position: relative; /* Ensure content stays above background */
+        }
+
+        .card {
+            margin-left: 20%;
+            max-width: 500px;
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent white */
+            padding: 35px;
+            text-align: center;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .card-title {
+            font-weight: bold;
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .alert {
+            margin-top: 20px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .alert-warning {
+            background-color: #ffeeba;
+            color: #856404;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            padding: 12px 40px;
+            font-size: 18px;
+            border-radius: 30px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: scale(1.05); /* Slight scale effect */
+        }
+
+        .btn-primary:focus {
+            outline: none;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
+        }
+
+        .card-body {
+            padding: 25px;
+        }
+
+        .card-text {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .mt-4 {
+            margin-top: 40px;
+        }
+
+        .divider {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            border-top: 2px solid #ddd;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <script>
+        function showAlertAndRedirect(message) {
+            alert(message);  // Show alert with the message
+            window.location.href = "/";  // Redirect to the index page
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Content Container -->
+    <div class="container">
+        <div class="card" style="margin-top: 50px;">
+           
+            {% if message %}
+                <script>
+                    showAlertAndRedirect("{{ message }}");  // Call function with the message
+                </script>
+            {% endif %}
+
+            {% if msg %}
+                <div class="alert alert-warning" role="alert">
+                    {{ msg }}
+                </div>
+            {% endif %}
+            
+            {% if Name %}
+                <div class="card-body">
+                    <h5 class="card-title">User Details</h5>
+                    <p class="card-text"><strong>Name:</strong> {{ Name }}</p>
+                    <p class="card-text"><strong>ID:</strong> {{ ID }}</p>
+                </div>
+            {% endif %}
+            
+            <!-- Divider for better visual separation -->
+            <div class="divider"></div>
+
+            <!-- Home Button -->
+            <div class="mt-4">
+                <a href="/" class="btn btn-primary">Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
